@@ -5,6 +5,7 @@ body{
 header{
     height: 65px;
     background-color: #0c5df3;
+    background-image: url("backround 2.jpeg");
     color: white;
     display: flex;
     align-items: flex-start;
@@ -32,13 +33,14 @@ header{
     color: #fff;
 }
 .uno{
-    width: 100%;
+       width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     height: calc(100vh - 65px);
     background-color: #09275e;
     color: white;
+    background-image: url("backround image.jpg");
     /* padding-top: 10%; */
 }
 
@@ -57,6 +59,7 @@ header{
     align-items: center;
     width: 40%;
     background-color: #022f83;
+    background-image: url("backround image.jpg");
 }
 .caja-presentacion{
     display: flex;
@@ -100,6 +103,7 @@ header{
     flex-direction: column;
     align-items: center;
     color: #F2F2F2;
+    background-image: url("backround 2.jpeg");
 }
 .proyectos{
     width: 60%;
