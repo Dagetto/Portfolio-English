@@ -33,7 +33,7 @@ header{
     color: #fff;
 }
 .uno{
-       width: 100%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -73,7 +73,7 @@ header{
 
 .dos{
     background-color: #F2F2F2;
-    height: 900px;
+    height: 1000px;
     display: flex;
     flex-direction: column;
     justify-content: center;
