@@ -32,16 +32,15 @@ header{
     background-color: #333;
     color: #fff;
 }
-.uno{
+.uno {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     height: calc(100vh - 65px);
-    background-color: #09275e;
+    background: linear-gradient(90deg, #09275e, rgba(9, 39, 94, 0.5));
     color: white;
     background-image: url("backround image.jpg");
-    /* padding-top: 10%; */
 }
 
 .caja-central{
@@ -71,17 +70,23 @@ header{
     padding: 10px;
 }
 
-.dos{
-    background-color: #F2F2F2;
-    height: 1200px;
+.dos {
+    background: linear-gradient(90deg, #F2F2F2, #022f83); /* Difuminado de colores gris/azul */
+    height: 1000px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #303030;
-    padding-left: 20%;
-    padding-right: 20%;
+    color: white; /* Cambiamos el color del texto a blanco para mayor contraste */
+	text-shadow: -1px -1px 2px rgba(0, 0, 0, 0.5), 1px -1px 2px rgba(0, 0, 0, 0.5), -1px 1px 2px rgba(0, 0, 0, 0.5), 1px 1px 2px rgba(0, 0, 0, 0.5);
+    padding-left: 10%; /* Reducimos el espacio de los lados para mayor armonía */
+    padding-right: 10%;
 }
+
+.dos a {
+    color: white;
+}
+
 .aptitudes{
     width: 70%;
 }
@@ -92,11 +97,12 @@ header{
 }
 
 .tech{
-    height: 90px;
+    height: 130px;
     border-radius: 50px;
+	background-color: white; /* Establecemos un fondo blanco para las imágenes */
 }
 
-.tres{
+.tres {
     background-color: #022f83;
     height: 600px;
     display: flex;
@@ -106,21 +112,53 @@ header{
     color: #F2F2F2;
     background-image: url("backround 2.jpeg");
 }
-.proyectos{
+
+.proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 50px;
     width: 60%;
-    display: flex;
-    justify-content: space-between;
 }
-.card{
+
+.card {
     text-align: center;
-    width: 30%;
     border: solid #F2F2F2 1px;
     border-radius: 10px;
+    margin: 20px;
     padding: 10px;
+    position: relative;
+    transition: transform 0.3s ease;
+    flex: 0 0 230px; /* Fuerza el ancho fijo de las tarjetas */
 }
-.card img{
+
+.card:hover {
+    transform: scale(1.05);
+    z-index: 1; /* Añade una propiedad z-index para asegurar que la tarjeta en hover esté por encima de las demás */
+}
+
+
+.card img {
     width: 100%;
 }
+
+.card::after {
+    content: attr(data-description); /* Agrega la descripción */
+    position: absolute; /* Posiciona el elemento de manera absoluta */
+    top: 0; /* Lo coloca al inicio de la tarjeta */
+    right: 100%; /* Lo coloca a la izquierda de la tarjeta */
+    width: 100%; /* Ancho igual al de la tarjeta */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+    color: white; /* Texto blanco */
+    padding: 10px; /* Espaciado interno */
+    box-sizing: border-box; /* Incluye el relleno en el tamaño total */
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.3s ease; /* Transición suave de la opacidad */
+}
+
+.card:hover::after {
+    opacity: 1; /* Muestra la descripción cuando se pasa el cursor */
+}
+
 .card a, footer a {
     color: white;
 }
@@ -138,12 +176,18 @@ footer{
     justify-content: flex-start;
     align-items: center;
     color: #F2F2F2;
-    height: 250px;
-}
-.contacto{
+    height: 100px;
+}	
+.contacto {
     width: 30%;
     display: flex;
     justify-content: center;
+    transition: transform 0.3s; /* Agregamos una transición suave para el efecto de zoom */
+}
+
+/* Al pasar el cursor sobre el elemento .contacto, aplicamos un zoom */
+.contacto:hover {
+    transform: scale(1.1); /* Aumentamos el tamaño en un 10% */
 }
 
 @media (max-width: 1000px) {
